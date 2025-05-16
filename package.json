@@ -1,6 +1,6 @@
 {
-  "name": "kidsout-sdk",
-  "version": "0.1.0",
+  "name": "@cutalion/kidsout-sdk",
+  "version": "0.0.1",
   "description": "TypeScript SDK for Kidsout API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,20 +12,20 @@
     "dist",
     "README.md"
   ],
-  "homepage": "https://github.com/yourusername/kidsout-sdk-ts#readme",
+  "homepage": "https://github.com/cutalion/kidsout-sdk-ts#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/kidsout-sdk-ts/issues"
+    "url": "https://github.com/cutalion/kidsout-sdk-ts/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/kidsout-sdk-ts.git"
+    "url": "git+https://github.com/cutalion/kidsout-sdk-ts.git"
   },
   "keywords": [
     "kidsout",
     "sdk",
     "typescript"
   ],
-  "author": "",
+  "author": "Alexander Glushkov",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.30.0"
@@ -36,5 +36,8 @@
     "ts-jest": "^27.0.0",
     "@types/jest": "^27.0.0",
     "axios-mock-adapter": "^1.19.0"
+  },
+  "directories": {
+    "test": "tests"
   }
 }

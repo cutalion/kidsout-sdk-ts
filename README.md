@@ -63,6 +63,25 @@ Returns a `Promise<ListResponse<Currency>>`.
 
 Feel free to open issues or submit pull requests.
 
+### Publishing and Versioning
+
+We follow [Semantic Versioning](https://semver.org/). To release a new version:
+1. Update code and merge into `main`.
+2. Bump version and tag via `npm version [patch|minor|major]`.
+3. Push commits and tags: `git push --follow-tags origin main`.
+4. GitHub Actions will automatically publish to npm on tagged releases.
+
+#### Local npm Authentication
+Create an `.npmrc` file (in your project root or home directory) with:
+```ini
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}
+```
+Then export your `NPM_TOKEN` in the shell or via an untracked `.env` file:
+```bash
+export NPM_TOKEN=your_token_here
+```
+Do not commit your token to version control.
+
 ## License
 
 MIT
