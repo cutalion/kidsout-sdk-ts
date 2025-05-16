@@ -27,6 +27,10 @@ export type Currency = JsonApiResource<Record<string, any>>;
  * Region resource as returned by /regions
  */
 export type Region = JsonApiResource<Record<string, any>>;
+/**
+ * Avatar resource as returned by /avatars
+ */
+export type Avatar = JsonApiResource<Record<string, any>>;
 
 /**
  * Generic list response wrapper
@@ -47,4 +51,21 @@ export interface ListResponse<T> {
 export interface ResourceResponse<T> {
   data: T;
   included?: any[];
+}
+
+/**
+ * Place resource as returned by /places
+ */
+export type Place = JsonApiResource<Record<string, any>>;
+/**
+ * Search location details as found in Region.attributes.search_location
+ */
+export interface SearchLocation {
+  address: string;
+  latitude: number;
+  longitude: number;
+  viewport: {
+    lower_left: { latitude: number; longitude: number };
+    upper_right: { latitude: number; longitude: number };
+  };
 }
