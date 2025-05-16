@@ -1,0 +1,2668 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "regions",
+      "attributes": {
+        "name": "Москва",
+        "available": true,
+        "slug": "msk",
+        "type": "city",
+        "prepositional_name": "Москве",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Europe/Moscow",
+        "currency": "RUB",
+        "utc_offset": 10800,
+        "school": {
+          "phone": "8 800 1002365",
+          "whatsapp": null,
+          "price": "7500.00",
+          "price_with_credit": "7500.00",
+          "currency": "RUB",
+          "promocode_enabled": true
+        },
+        "interview": null,
+        "online_school": {
+          "phone": "8 800 1002365",
+          "whatsapp": null,
+          "price": "7500.00",
+          "price_with_credit": null,
+          "currency": "RUB",
+          "promocode_enabled": true
+        },
+        "online_interview": null,
+        "commission_fee": "379.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "699.00",
+            "price_for_month": "699.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1580.00",
+            "price_for_month": "526.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "3100.00",
+            "price_for_month": "516.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "6000.00",
+            "price_for_month": "500.00",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Москва",
+          "latitude": 55.755864,
+          "longitude": 37.617698,
+          "viewport": {
+            "lower_left": {
+              "latitude": 55.49133,
+              "longitude": 37.32606
+            },
+            "upper_right": {
+              "latitude": 55.957565,
+              "longitude": 37.967799
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "2"
+          }
+        }
+      }
+    },
+    {
+      "id": "2",
+      "type": "regions",
+      "attributes": {
+        "name": "Санкт-Петербург",
+        "available": true,
+        "slug": "spb",
+        "type": "city",
+        "prepositional_name": "Петербурге",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Europe/Moscow",
+        "currency": "RUB",
+        "utc_offset": 10800,
+        "school": {
+          "phone": "8 800 1002365",
+          "whatsapp": null,
+          "price": "7500.00",
+          "price_with_credit": "7500.00",
+          "currency": "RUB",
+          "promocode_enabled": true
+        },
+        "interview": null,
+        "online_school": {
+          "phone": "8 800 1002365",
+          "whatsapp": null,
+          "price": "7500.00",
+          "price_with_credit": null,
+          "currency": "RUB",
+          "promocode_enabled": true
+        },
+        "online_interview": null,
+        "commission_fee": "379.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "699.00",
+            "price_for_month": "699.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1580.00",
+            "price_for_month": "526.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "3100.00",
+            "price_for_month": "516.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "6000.00",
+            "price_for_month": "500.00",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Санкт-Петербург",
+          "latitude": 59.938955,
+          "longitude": 30.315644,
+          "viewport": {
+            "lower_left": {
+              "latitude": 59.744315,
+              "longitude": 30.043382
+            },
+            "upper_right": {
+              "latitude": 60.090683,
+              "longitude": 30.566435
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "15"
+          }
+        }
+      }
+    },
+    {
+      "id": "3",
+      "type": "regions",
+      "attributes": {
+        "name": "Тюмень",
+        "available": true,
+        "slug": "tmn",
+        "type": "city",
+        "prepositional_name": "Тюмени",
+        "sitter_support_phone": "+7 950 493-23-32",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Yekaterinburg",
+        "currency": "RUB",
+        "utc_offset": 18000,
+        "school": {
+          "phone": "+7 950 493-23-32",
+          "whatsapp": null,
+          "price": "5000.00",
+          "price_with_credit": "5100.00",
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "599.00",
+            "price_for_month": "599.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1580.00",
+            "price_for_month": "526.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "3100.00",
+            "price_for_month": "516.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "6000.00",
+            "price_for_month": "500.00",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Тюмень",
+          "latitude": 57.152985,
+          "longitude": 65.541227,
+          "viewport": {
+            "lower_left": {
+              "latitude": 57.001471,
+              "longitude": 65.276844
+            },
+            "upper_right": {
+              "latitude": 57.27285,
+              "longitude": 65.814988
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "3"
+          }
+        }
+      }
+    },
+    {
+      "id": "4",
+      "type": "regions",
+      "attributes": {
+        "name": "Екатеринбург",
+        "available": true,
+        "slug": "ekb",
+        "type": "city",
+        "prepositional_name": "Екатеринбурге",
+        "sitter_support_phone": "+7 912 605-44-63",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Yekaterinburg",
+        "currency": "RUB",
+        "utc_offset": 18000,
+        "school": {
+          "phone": "+7 912 605-44-63",
+          "whatsapp": null,
+          "price": "5000.00",
+          "price_with_credit": "5650.00",
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Екатеринбург",
+          "latitude": 56.838011,
+          "longitude": 60.597474,
+          "viewport": {
+            "lower_left": {
+              "latitude": 56.593795,
+              "longitude": 60.006832
+            },
+            "upper_right": {
+              "latitude": 56.982695,
+              "longitude": 60.943299
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "4"
+          }
+        }
+      }
+    },
+    {
+      "id": "11",
+      "type": "regions",
+      "attributes": {
+        "name": "Новосибирск",
+        "available": true,
+        "slug": "nsk",
+        "type": "city",
+        "prepositional_name": "Новосибирске",
+        "sitter_support_phone": "+7 951 380-64-10",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Novosibirsk",
+        "currency": "RUB",
+        "utc_offset": 25200,
+        "school": {
+          "phone": "+7 951 380-64-10",
+          "whatsapp": null,
+          "price": "6000.00",
+          "price_with_credit": "6340.00",
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "279.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "599.00",
+            "price_for_month": "599.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1580.00",
+            "price_for_month": "526.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "3100.00",
+            "price_for_month": "516.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "6000.00",
+            "price_for_month": "500.00",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Новосибирск",
+          "latitude": 55.030204,
+          "longitude": 82.92043,
+          "viewport": {
+            "lower_left": {
+              "latitude": 54.803637,
+              "longitude": 82.751897
+            },
+            "upper_right": {
+              "latitude": 55.199424,
+              "longitude": 83.16019
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "12",
+      "type": "regions",
+      "attributes": {
+        "name": "Россия",
+        "available": true,
+        "slug": "russia",
+        "type": "country",
+        "prepositional_name": "России",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": false,
+        "has_school": false,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Europe/Moscow",
+        "currency": "RUB",
+        "utc_offset": 10800,
+        "school": null,
+        "interview": null,
+        "online_school": {
+          "phone": "8 800 1002365",
+          "whatsapp": null,
+          "price": "5000.00",
+          "price_with_credit": "5000.00",
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "399.00",
+            "price_for_month": "399.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1050.00",
+            "price_for_month": "350.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2050.00",
+            "price_for_month": "341.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4000.00",
+            "price_for_month": "333.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Москва",
+          "latitude": 55.755864,
+          "longitude": 37.617698,
+          "viewport": {
+            "lower_left": {
+              "latitude": 55.49133,
+              "longitude": 37.32606
+            },
+            "upper_right": {
+              "latitude": 55.957565,
+              "longitude": 37.967799
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "2"
+          }
+        }
+      }
+    },
+    {
+      "id": "13",
+      "type": "regions",
+      "attributes": {
+        "name": "Мир",
+        "available": true,
+        "slug": "world",
+        "type": "world",
+        "prepositional_name": "Мире",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": false,
+        "has_school": false,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Europe/Moscow",
+        "currency": "RUB",
+        "utc_offset": 10800,
+        "school": null,
+        "interview": null,
+        "online_school": {
+          "phone": null,
+          "whatsapp": "https://wa.me/17813695876",
+          "price": "6500.00",
+          "price_with_credit": null,
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "online_interview": null,
+        "commission_fee": "279.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "599.00",
+            "price_for_month": "599.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1580.00",
+            "price_for_month": "526.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "3100.00",
+            "price_for_month": "516.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "6000.00",
+            "price_for_month": "500.00",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Москва",
+          "latitude": 55.7504461,
+          "longitude": 37.6174943,
+          "viewport": {
+            "lower_left": {
+              "latitude": 55.49133,
+              "longitude": 37.32606
+            },
+            "upper_right": {
+              "latitude": 55.957565,
+              "longitude": 37.967799
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "2"
+          }
+        }
+      }
+    },
+    {
+      "id": "14",
+      "type": "regions",
+      "attributes": {
+        "name": "Ростов-на-Дону",
+        "available": true,
+        "slug": "rnd",
+        "type": "city",
+        "prepositional_name": "Ростове-на-Дону",
+        "sitter_support_phone": "+7 938 170-20-80",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Europe/Moscow",
+        "currency": "RUB",
+        "utc_offset": 10800,
+        "school": {
+          "phone": "+7 938 170-20-80",
+          "whatsapp": null,
+          "price": "5000.00",
+          "price_with_credit": "5280.00",
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "249.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "599.00",
+            "price_for_month": "599.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1580.00",
+            "price_for_month": "526.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "3100.00",
+            "price_for_month": "516.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "6000.00",
+            "price_for_month": "500.00",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Ростов-на-Дону",
+          "latitude": 47.222078,
+          "longitude": 39.720358,
+          "viewport": {
+            "lower_left": {
+              "latitude": 47.153251,
+              "longitude": 39.455768
+            },
+            "upper_right": {
+              "latitude": 47.346722,
+              "longitude": 39.851521
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "16"
+          }
+        }
+      }
+    },
+    {
+      "id": "15",
+      "type": "regions",
+      "attributes": {
+        "name": "Оренбург",
+        "available": true,
+        "slug": "oren",
+        "type": "city",
+        "prepositional_name": "Оренбурге",
+        "sitter_support_phone": "+7 987 886-50-61",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Yekaterinburg",
+        "currency": "RUB",
+        "utc_offset": 18000,
+        "school": {
+          "phone": "+7 987 886-50-61",
+          "whatsapp": null,
+          "price": "5000.00",
+          "price_with_credit": "5280.00",
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "299.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "599.00",
+            "price_for_month": "599.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1580.00",
+            "price_for_month": "526.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "3100.00",
+            "price_for_month": "516.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "6000.00",
+            "price_for_month": "500.00",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Оренбург",
+          "latitude": 51.768205,
+          "longitude": 55.096964,
+          "viewport": {
+            "lower_left": {
+              "latitude": 51.683044,
+              "longitude": 54.988358
+            },
+            "upper_right": {
+              "latitude": 51.905999,
+              "longitude": 55.39701
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "11"
+          }
+        }
+      }
+    },
+    {
+      "id": "16",
+      "type": "regions",
+      "attributes": {
+        "name": "Красноярск",
+        "available": true,
+        "slug": "krasnoyarsk",
+        "type": "city",
+        "prepositional_name": "Красноярске",
+        "sitter_support_phone": "+7 913 539-70-26",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Krasnoyarsk",
+        "currency": "RUB",
+        "utc_offset": 25200,
+        "school": {
+          "phone": "+7 913 539-70-26",
+          "whatsapp": null,
+          "price": "5000.00",
+          "price_with_credit": "5280.00",
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Красноярск",
+          "latitude": 56.010569,
+          "longitude": 92.852572,
+          "viewport": {
+            "lower_left": {
+              "latitude": 55.911608,
+              "longitude": 92.626484
+            },
+            "upper_right": {
+              "latitude": 56.133668,
+              "longitude": 93.168374
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "12"
+          }
+        }
+      }
+    },
+    {
+      "id": "17",
+      "type": "regions",
+      "attributes": {
+        "name": "Сочи",
+        "available": true,
+        "slug": "sochi",
+        "type": "city",
+        "prepositional_name": "Сочи",
+        "sitter_support_phone": "+7 925 727-17-70",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Europe/Moscow",
+        "currency": "RUB",
+        "utc_offset": 10800,
+        "school": {
+          "phone": "+79222261100",
+          "whatsapp": null,
+          "price": "5000.00",
+          "price_with_credit": "5800.00",
+          "currency": "RUB",
+          "promocode_enabled": true
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "249.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "599.00",
+            "price_for_month": "599.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1580.00",
+            "price_for_month": "526.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "3100.00",
+            "price_for_month": "516.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "6000.00",
+            "price_for_month": "500.00",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Сочи",
+          "latitude": 43.585472,
+          "longitude": 39.723098,
+          "viewport": {
+            "lower_left": {
+              "latitude": 43.395071,
+              "longitude": 39.149685
+            },
+            "upper_right": {
+              "latitude": 44.029938,
+              "longitude": 40.010397
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "17"
+          }
+        }
+      }
+    },
+    {
+      "id": "18",
+      "type": "regions",
+      "attributes": {
+        "name": "Грузия",
+        "available": true,
+        "slug": "georgia",
+        "type": "country",
+        "prepositional_name": "Грузии",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": false,
+        "has_school": false,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Tbilisi",
+        "currency": "RUB",
+        "utc_offset": 14400,
+        "school": null,
+        "interview": null,
+        "online_school": {
+          "phone": null,
+          "whatsapp": "https://wa.me/17813695876",
+          "price": "4000.00",
+          "price_with_credit": null,
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Тбилиси",
+          "latitude": 41.693083,
+          "longitude": 44.801561,
+          "viewport": {
+            "lower_left": {
+              "latitude": 41.619812,
+              "longitude": 44.596808
+            },
+            "upper_right": {
+              "latitude": 41.843424,
+              "longitude": 45.017795
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "18"
+          }
+        }
+      }
+    },
+    {
+      "id": "19",
+      "type": "regions",
+      "attributes": {
+        "name": "Армения",
+        "available": true,
+        "slug": "armenia",
+        "type": "country",
+        "prepositional_name": "Армении",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": false,
+        "has_school": false,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Yerevan",
+        "currency": "RUB",
+        "utc_offset": 14400,
+        "school": null,
+        "interview": null,
+        "online_school": {
+          "phone": null,
+          "whatsapp": "https://wa.me/17813695876",
+          "price": "4000.00",
+          "price_with_credit": null,
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Ереван",
+          "latitude": 40.177628,
+          "longitude": 44.512555,
+          "viewport": {
+            "lower_left": {
+              "latitude": 40.065653,
+              "longitude": 44.362088
+            },
+            "upper_right": {
+              "latitude": 40.241749,
+              "longitude": 44.621045
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "22"
+          }
+        }
+      }
+    },
+    {
+      "id": "20",
+      "type": "regions",
+      "attributes": {
+        "name": "Болгария",
+        "available": true,
+        "slug": "bulgaria",
+        "type": "country",
+        "prepositional_name": "Болгарии",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": false,
+        "has_school": false,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Europe/Sofia",
+        "currency": "RUB",
+        "utc_offset": 10800,
+        "school": null,
+        "interview": null,
+        "online_school": {
+          "phone": null,
+          "whatsapp": "https://wa.me/17813695876",
+          "price": "4000.00",
+          "price_with_credit": null,
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "София",
+          "latitude": 42.697839,
+          "longitude": 23.314498,
+          "viewport": {
+            "lower_left": {
+              "latitude": 42.603159,
+              "longitude": 23.207535
+            },
+            "upper_right": {
+              "latitude": 42.765263,
+              "longitude": 23.437926
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "19"
+          }
+        }
+      }
+    },
+    {
+      "id": "21",
+      "type": "regions",
+      "attributes": {
+        "name": "Турция",
+        "available": true,
+        "slug": "turkey",
+        "type": "country",
+        "prepositional_name": "Турции",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": false,
+        "has_school": false,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Europe/Istanbul",
+        "currency": "RUB",
+        "utc_offset": 10800,
+        "school": null,
+        "interview": null,
+        "online_school": {
+          "phone": null,
+          "whatsapp": "https://wa.me/17813695876",
+          "price": "4000.00",
+          "price_with_credit": null,
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Стамбул",
+          "latitude": 41.011218,
+          "longitude": 28.978178,
+          "viewport": {
+            "lower_left": {
+              "latitude": 40.802695,
+              "longitude": 28.401361
+            },
+            "upper_right": {
+              "latitude": 41.225609,
+              "longitude": 29.415693
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "20"
+          }
+        }
+      }
+    },
+    {
+      "id": "22",
+      "type": "regions",
+      "attributes": {
+        "name": "Азербайджан",
+        "available": true,
+        "slug": "azerbaijan",
+        "type": "country",
+        "prepositional_name": "Азербайджане",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": false,
+        "has_school": false,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Baku",
+        "currency": "RUB",
+        "utc_offset": 14400,
+        "school": null,
+        "interview": null,
+        "online_school": {
+          "phone": null,
+          "whatsapp": "https://wa.me/17813695876",
+          "price": "4000.00",
+          "price_with_credit": null,
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Баку",
+          "latitude": 40.372974,
+          "longitude": 49.853148,
+          "viewport": {
+            "lower_left": {
+              "latitude": 40.298518,
+              "longitude": 49.764151
+            },
+            "upper_right": {
+              "latitude": 40.437444,
+              "longitude": 49.989925
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "21"
+          }
+        }
+      }
+    },
+    {
+      "id": "23",
+      "type": "regions",
+      "attributes": {
+        "name": "Томск",
+        "available": true,
+        "slug": "tomsk",
+        "type": "city",
+        "prepositional_name": "Томске",
+        "sitter_support_phone": "79991774465",
+        "parent_support_phone": "79991774465",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Tomsk",
+        "currency": "RUB",
+        "utc_offset": 25200,
+        "school": {
+          "phone": "79991774465",
+          "whatsapp": null,
+          "price": "5000.00",
+          "price_with_credit": "5280.00",
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Томск",
+          "latitude": 56.484645,
+          "longitude": 84.947649,
+          "viewport": {
+            "lower_left": {
+              "latitude": 56.377826,
+              "longitude": 84.827607
+            },
+            "upper_right": {
+              "latitude": 56.688809,
+              "longitude": 85.14924
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "13"
+          }
+        }
+      }
+    },
+    {
+      "id": "24",
+      "type": "regions",
+      "attributes": {
+        "name": "Калининград",
+        "available": true,
+        "slug": "kld",
+        "type": "city",
+        "prepositional_name": "Калининграде",
+        "sitter_support_phone": "79952575950",
+        "parent_support_phone": "79952575950",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Europe/Kaliningrad",
+        "currency": "RUB",
+        "utc_offset": 7200,
+        "school": {
+          "phone": "79952575950",
+          "whatsapp": null,
+          "price": "5000.00",
+          "price_with_credit": "5280.00",
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Калининград",
+          "latitude": 54.710162,
+          "longitude": 20.510137,
+          "viewport": {
+            "lower_left": {
+              "latitude": 54.630133,
+              "longitude": 20.293868
+            },
+            "upper_right": {
+              "latitude": 54.778788,
+              "longitude": 20.653733
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "14"
+          }
+        }
+      }
+    },
+    {
+      "id": "25",
+      "type": "regions",
+      "attributes": {
+        "name": "Казахстан",
+        "available": true,
+        "slug": "kz",
+        "type": "country",
+        "prepositional_name": "Казахстане",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Almaty",
+        "currency": "KZT",
+        "utc_offset": 18000,
+        "school": {
+          "phone": null,
+          "whatsapp": "https://wa.me/17813695876",
+          "price": "20000.00",
+          "price_with_credit": null,
+          "currency": "KZT",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Алматы",
+          "latitude": 43.2363924,
+          "longitude": 76.9457275,
+          "viewport": {
+            "lower_left": {
+              "latitude": 43.0328438,
+              "longitude": 76.7382775
+            },
+            "upper_right": {
+              "latitude": 43.4037657,
+              "longitude": 77.1667539
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "219"
+          }
+        }
+      }
+    },
+    {
+      "id": "26",
+      "type": "regions",
+      "attributes": {
+        "name": "Нижний Новгород",
+        "available": true,
+        "slug": "nn",
+        "type": "city",
+        "prepositional_name": "Нижнем Новгороде",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Europe/Moscow",
+        "currency": "RUB",
+        "utc_offset": 10800,
+        "school": {
+          "phone": "+79939588122",
+          "whatsapp": null,
+          "price": "5000.00",
+          "price_with_credit": "5280.00",
+          "currency": "RUB",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Нижний Новгород",
+          "latitude": 56.326797,
+          "longitude": 44.006516,
+          "viewport": {
+            "lower_left": {
+              "latitude": 56.185272,
+              "longitude": 43.547621
+            },
+            "upper_right": {
+              "latitude": 56.423645,
+              "longitude": 44.119435
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "72"
+          }
+        }
+      }
+    },
+    {
+      "id": "27",
+      "type": "regions",
+      "attributes": {
+        "name": "Алматы",
+        "available": true,
+        "slug": "almaty",
+        "type": "city",
+        "prepositional_name": "Алматы",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Almaty",
+        "currency": "KZT",
+        "utc_offset": 18000,
+        "school": {
+          "phone": "+77054890710",
+          "whatsapp": null,
+          "price": "20000.00",
+          "price_with_credit": null,
+          "currency": "KZT",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Алматы",
+          "latitude": 43.2363924,
+          "longitude": 76.9457275,
+          "viewport": {
+            "lower_left": {
+              "latitude": 43.0328438,
+              "longitude": 76.7382775
+            },
+            "upper_right": {
+              "latitude": 43.4037657,
+              "longitude": 77.1667539
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "219"
+          }
+        }
+      }
+    },
+    {
+      "id": "28",
+      "type": "regions",
+      "attributes": {
+        "name": "Астана",
+        "available": true,
+        "slug": "astana",
+        "type": "city",
+        "prepositional_name": "Астане",
+        "sitter_support_phone": "8 800 707-80-97",
+        "parent_support_phone": "8 800 707-80-97",
+        "service_presence": true,
+        "has_school": true,
+        "has_interview": false,
+        "test_mode": false,
+        "timezone": "Asia/Almaty",
+        "currency": "KZT",
+        "utc_offset": 18000,
+        "school": {
+          "phone": "+77054890710",
+          "whatsapp": null,
+          "price": "20000.00",
+          "price_with_credit": null,
+          "currency": "KZT",
+          "promocode_enabled": false
+        },
+        "interview": null,
+        "online_school": null,
+        "online_interview": null,
+        "commission_fee": "197.00",
+        "subscription_options": [
+          {
+            "period_months": 1,
+            "price_for_period": "499.00",
+            "price_for_month": "499.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 3,
+            "price_for_period": "1350.00",
+            "price_for_month": "450.00",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 6,
+            "price_for_period": "2500.00",
+            "price_for_month": "416.67",
+            "currency": "RUB"
+          },
+          {
+            "period_months": 12,
+            "price_for_period": "4900.00",
+            "price_for_month": "408.33",
+            "currency": "RUB"
+          }
+        ],
+        "search_location": {
+          "address": "Астана",
+          "latitude": 51.128207,
+          "longitude": 71.43042,
+          "viewport": {
+            "lower_left": {
+              "latitude": 51.003171,
+              "longitude": 71.223888
+            },
+            "upper_right": {
+              "latitude": 51.302265,
+              "longitude": 71.7421
+            }
+          }
+        }
+      },
+      "relationships": {
+        "default_place": {
+          "data": {
+            "type": "places",
+            "id": "2505"
+          }
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "id": "2",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Москва",
+        "latitude": 55.755864,
+        "longitude": 37.617698
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "1"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "2"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "15",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Санкт-Петербург",
+        "latitude": 59.938955,
+        "longitude": 30.315644
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "2"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "16"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "3",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Тюмень",
+        "latitude": 57.152985,
+        "longitude": 65.541227
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "3"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "3"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "4",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Екатеринбург",
+        "latitude": 56.838011,
+        "longitude": 60.597474
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "4"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "4"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "1",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Новосибирск",
+        "latitude": 55.030204,
+        "longitude": 82.92043
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "11"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "1"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "16",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Ростов-на-Дону",
+        "latitude": 47.222078,
+        "longitude": 39.720358
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "14"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "17"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "11",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Оренбург",
+        "latitude": 51.768205,
+        "longitude": 55.096964
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "15"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "11"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "12",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Красноярск",
+        "latitude": 56.010569,
+        "longitude": 92.852572
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "16"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "12"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "17",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Сочи",
+        "latitude": 43.585472,
+        "longitude": 39.723098
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "17"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "21"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "18",
+      "type": "places",
+      "attributes": {
+        "address": "Грузия, Тбилиси",
+        "latitude": 41.693083,
+        "longitude": 44.801561
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "18"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "15"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "2"
+          }
+        }
+      }
+    },
+    {
+      "id": "22",
+      "type": "places",
+      "attributes": {
+        "address": "Армения, Ереван",
+        "latitude": 40.177628,
+        "longitude": 44.512555
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "19"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "22"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "3"
+          }
+        }
+      }
+    },
+    {
+      "id": "19",
+      "type": "places",
+      "attributes": {
+        "address": "Болгария, София",
+        "latitude": 42.697839,
+        "longitude": 23.314498
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "20"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "18"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "4"
+          }
+        }
+      }
+    },
+    {
+      "id": "20",
+      "type": "places",
+      "attributes": {
+        "address": "Турция, Стамбул",
+        "latitude": 41.011218,
+        "longitude": 28.978178
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "21"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "19"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "5"
+          }
+        }
+      }
+    },
+    {
+      "id": "21",
+      "type": "places",
+      "attributes": {
+        "address": "Азербайджан, Баку",
+        "latitude": 40.372974,
+        "longitude": 49.853148
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "22"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "20"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "6"
+          }
+        }
+      }
+    },
+    {
+      "id": "13",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Томск",
+        "latitude": 56.484645,
+        "longitude": 84.947649
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "23"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "13"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "14",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Калининград",
+        "latitude": 54.710162,
+        "longitude": 20.510137
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "24"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "14"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "219",
+      "type": "places",
+      "attributes": {
+        "address": "Казахстан, Алматы",
+        "latitude": 43.235,
+        "longitude": 76.95
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "27"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "218"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "203"
+          }
+        }
+      }
+    },
+    {
+      "id": "72",
+      "type": "places",
+      "attributes": {
+        "address": "Россия, Нижний Новгород",
+        "latitude": 56.325,
+        "longitude": 44.01
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "26"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "72"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "2505",
+      "type": "places",
+      "attributes": {
+        "address": "Казахстан, Астана",
+        "latitude": 51.12,
+        "longitude": 71.43
+      },
+      "relationships": {
+        "region": {
+          "data": {
+            "type": "regions",
+            "id": "28"
+          }
+        },
+        "locality": {
+          "data": {
+            "type": "localities",
+            "id": "340"
+          }
+        },
+        "country": {
+          "data": {
+            "type": "countries",
+            "id": "203"
+          }
+        }
+      }
+    },
+    {
+      "id": "2",
+      "type": "localities",
+      "attributes": {
+        "name": "Москва"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1",
+      "type": "countries",
+      "attributes": {
+        "name": "Россия"
+      }
+    },
+    {
+      "id": "16",
+      "type": "localities",
+      "attributes": {
+        "name": "Санкт-Петербург"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "3",
+      "type": "localities",
+      "attributes": {
+        "name": "Тюмень"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4",
+      "type": "localities",
+      "attributes": {
+        "name": "Екатеринбург"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1",
+      "type": "localities",
+      "attributes": {
+        "name": "Новосибирск"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "17",
+      "type": "localities",
+      "attributes": {
+        "name": "Ростов-на-Дону"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "11",
+      "type": "localities",
+      "attributes": {
+        "name": "Оренбург"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "12",
+      "type": "localities",
+      "attributes": {
+        "name": "Красноярск"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "21",
+      "type": "localities",
+      "attributes": {
+        "name": "Сочи"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "15",
+      "type": "localities",
+      "attributes": {
+        "name": "Тбилиси"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2",
+      "type": "countries",
+      "attributes": {
+        "name": "Грузия"
+      }
+    },
+    {
+      "id": "22",
+      "type": "localities",
+      "attributes": {
+        "name": "Ереван"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "3",
+      "type": "countries",
+      "attributes": {
+        "name": "Армения"
+      }
+    },
+    {
+      "id": "18",
+      "type": "localities",
+      "attributes": {
+        "name": "София"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4",
+      "type": "countries",
+      "attributes": {
+        "name": "Болгария"
+      }
+    },
+    {
+      "id": "19",
+      "type": "localities",
+      "attributes": {
+        "name": "Стамбул"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5",
+      "type": "countries",
+      "attributes": {
+        "name": "Турция"
+      }
+    },
+    {
+      "id": "20",
+      "type": "localities",
+      "attributes": {
+        "name": "Баку"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "6",
+      "type": "countries",
+      "attributes": {
+        "name": "Азербайджан"
+      }
+    },
+    {
+      "id": "13",
+      "type": "localities",
+      "attributes": {
+        "name": "Томск"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "14",
+      "type": "localities",
+      "attributes": {
+        "name": "Калининград"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "218",
+      "type": "localities",
+      "attributes": {
+        "name": "Алматы"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "203",
+      "type": "countries",
+      "attributes": {
+        "name": "Казахстан"
+      }
+    },
+    {
+      "id": "72",
+      "type": "localities",
+      "attributes": {
+        "name": "Нижний Новгород"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "340",
+      "type": "localities",
+      "attributes": {
+        "name": "Астана"
+      },
+      "relationships": {
+        "country": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    }
+  ]
+}

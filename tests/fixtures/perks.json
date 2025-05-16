@@ -1,0 +1,224 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "📚",
+        "text": "Помощь с уроками",
+        "description": null,
+        "key": "homework_help"
+      }
+    },
+    {
+      "id": "2",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🇫🇷",
+        "text": "Французский язык",
+        "description": null,
+        "key": "french_language"
+      }
+    },
+    {
+      "id": "3",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🎼",
+        "text": "Музыкальное образование",
+        "description": null,
+        "key": "music_education"
+      }
+    },
+    {
+      "id": "4",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🏃",
+        "text": "Активный ситтер",
+        "description": null,
+        "key": "active_sitter"
+      }
+    },
+    {
+      "id": "5",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "👨‍👩‍👧",
+        "text": "Ищу постоянную семью",
+        "description": null,
+        "key": "seeking_permanent_family"
+      }
+    },
+    {
+      "id": "6",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🧑‍🏫",
+        "text": "Педагог начальных классов",
+        "description": null,
+        "key": "primary_school_teacher"
+      }
+    },
+    {
+      "id": "7",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🌦",
+        "text": "Прогулки в любую погоду",
+        "description": null,
+        "key": "walks_in_any_weather"
+      }
+    },
+    {
+      "id": "8",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🧽",
+        "text": "Помощь по дому",
+        "description": null,
+        "key": "home_help"
+      }
+    },
+    {
+      "id": "9",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🇬🇧",
+        "text": "Английский язык",
+        "description": null,
+        "key": "english_language"
+      }
+    },
+    {
+      "id": "10",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🚗",
+        "text": "Водительские права",
+        "description": null,
+        "key": "driving_license"
+      }
+    },
+    {
+      "id": "11",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🌃",
+        "text": "Ночные заказы",
+        "description": null,
+        "key": "night_orders"
+      }
+    },
+    {
+      "id": "12",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🌏",
+        "text": "Готовность к переездам",
+        "description": null,
+        "key": "ready_to_relocate"
+      }
+    },
+    {
+      "id": "13",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🧑‍⚕️",
+        "text": "Медицинское образование",
+        "description": null,
+        "key": "medical_education"
+      }
+    },
+    {
+      "id": "14",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🚑",
+        "text": "Курсы первой помощи",
+        "description": null,
+        "key": "first_aid_courses"
+      }
+    },
+    {
+      "id": "15",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🌈",
+        "text": "Лепка",
+        "description": null,
+        "key": "pottery"
+      }
+    },
+    {
+      "id": "16",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🤧",
+        "text": "Присмотрю за заболевшим",
+        "description": null,
+        "key": "care_for_the_sick"
+      }
+    },
+    {
+      "id": "17",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🎨",
+        "text": "Живопись",
+        "description": null,
+        "key": "painting"
+      }
+    },
+    {
+      "id": "18",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🎓",
+        "text": "Психологическое образование",
+        "description": null,
+        "key": "psychological_education"
+      }
+    },
+    {
+      "id": "19",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🎤",
+        "text": "Пение",
+        "description": null,
+        "key": "singing"
+      }
+    },
+    {
+      "id": "20",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🎒",
+        "text": "Подготовка к школе",
+        "description": null,
+        "key": "school_preparation"
+      }
+    },
+    {
+      "id": "21",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "👩",
+        "text": "Логопед",
+        "description": null,
+        "key": "speech_therapist"
+      }
+    },
+    {
+      "id": "22",
+      "type": "perks",
+      "attributes": {
+        "emoticon": "🧩",
+        "text": "Работаю с детьми с РАС",
+        "description": "Ситтеры, прошедшие курс от специалистов фонда «Антон тут рядом»",
+        "key": "work_with_asd_kids"
+      }
+    }
+  ]
+}

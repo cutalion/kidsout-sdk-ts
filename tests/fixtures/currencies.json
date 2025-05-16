@@ -1,0 +1,108 @@
+{
+  "data": [
+    {
+      "id": "RUB",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "RUB",
+        "name": "Российский рубль"
+      }
+    },
+    {
+      "id": "USD",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "USD",
+        "name": "Доллар США"
+      }
+    },
+    {
+      "id": "KZT",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "KZT",
+        "name": "Тенге"
+      }
+    },
+    {
+      "id": "GEL",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "GEL",
+        "name": "Лари"
+      }
+    },
+    {
+      "id": "AMD",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "AMD",
+        "name": "Армянский драм"
+      }
+    },
+    {
+      "id": "BGN",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "BGN",
+        "name": "Болгарский лев"
+      }
+    },
+    {
+      "id": "TRY",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "TRY",
+        "name": "Турецкая лира"
+      }
+    },
+    {
+      "id": "AZN",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "AZN",
+        "name": "Азербайджанский манат"
+      }
+    },
+    {
+      "id": "UZS",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "UZS",
+        "name": "Узбекский сум"
+      }
+    },
+    {
+      "id": "RSD",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "RSD",
+        "name": "Сербский динар"
+      }
+    },
+    {
+      "id": "EUR",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "EUR",
+        "name": "Евро"
+      }
+    },
+    {
+      "id": "ILS",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "ILS",
+        "name": "Шекель"
+      }
+    },
+    {
+      "id": "AED",
+      "type": "currencies",
+      "attributes": {
+        "iso_code": "AED",
+        "name": "Дирхам ОАЭ"
+      }
+    }
+  ]
+}
