@@ -25,6 +25,10 @@ export interface SearchSittersParams {
     | "distance"
     | "-return_rate"
     | "-kidsout_score";
+  /** Include related resources, e.g. ['avatars','inaccurate_location'] */
+  include?: string[];
+  /** Sparse fieldsets, e.g. { users: ['name','age'], perks: ['name'] } */
+  fields?: Record<string, string[]>;
   online?: boolean;
   region_id?: number;
   latitude?: number;
@@ -117,6 +121,17 @@ export class KidsoutSDK {
     }
     // Flatten parameters for query string
     const query: Record<string, any> = { ...params };
+    // Handle include parameter (JSON:API)
+    if (params.include) {
+      query.include = params.include.join(',');
+    }
+    // Handle fields sparse fieldsets
+    if (params.fields) {
+      for (const [resource, fieldsArray] of Object.entries(params.fields)) {
+        query[`fields[${resource}]`] = (fieldsArray || []).join(',');
+      }
+      delete query.fields;
+    }
     // Handle bbox nested object
     if (params.bbox) {
       const { bbox } = params;
