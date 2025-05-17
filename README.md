@@ -12,8 +12,15 @@ yarn add kidsout-sdk
 
 ## Usage
 
-```ts
+```js
+// ES module import (in .js files or environments that support ESM)
 import { KidsoutSDK, SearchSittersParams } from 'kidsout-sdk';
+
+// CommonJS require (default in Node.js REPL or .js files without "type": "module")
+const { KidsoutSDK: SDK, SearchSittersParams: Params } = require('kidsout-sdk');
+
+// Dynamic import (Node.js REPL supports top-level await)
+const { KidsoutSDK: SDK2 } = await import('kidsout-sdk');
 
 const sdk = new KidsoutSDK();
 
