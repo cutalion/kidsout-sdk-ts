@@ -37,6 +37,47 @@ const sdk = new KidsoutSDK();
 })();
 ```
 
+## Resource Models
+
+For easier access to related resources, use the provided model classes:
+
+```ts
+import {
+  KidsoutSDK,
+  SearchSittersParams,
+  SitterModel,
+  RegionModel,
+} from 'kidsout-sdk';
+
+const sdk = new KidsoutSDK();
+
+(async () => {
+  // Search sitters with included relationships
+  const resp = await sdk.searchSitters({
+    include: ['avatars', 'inaccurate_location', 'meta_tags'],
+    per_page: 5,
+  });
+  // Wrap raw sitter objects into models
+  const sitters = SitterModel.fromListResponse(resp);
+  for (const sitter of sitters) {
+    console.log('Sitter ID:', sitter.id);
+    console.log('Name:', sitter.attributes.name);
+    console.log('Avatar URL:', sitter.avatar?.attributes.url);
+    console.log('Inaccurate Location:', sitter.inaccurateLocation?.attributes);
+    console.log('Meta Tags:', sitter.metaTags?.attributes);
+  }
+
+  // List regions with default place and search location
+  const regResp = await sdk.getRegions();
+  const regions = RegionModel.fromListResponse(regResp);
+  for (const region of regions) {
+    console.log('Region:', region.attributes.name);
+    console.log('Default Place:', region.defaultPlace?.attributes);
+    console.log('Search Location:', region.searchLocation);
+  }
+})();
+```
+
 ## API
 
 ### new KidsoutSDK(baseURL?)
