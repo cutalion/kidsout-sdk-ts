@@ -47,6 +47,7 @@ import {
   SearchSittersParams,
   SitterModel,
   RegionModel,
+  ReviewModel,
 } from 'kidsout-sdk';
 
 const sdk = new KidsoutSDK();
@@ -74,6 +75,13 @@ const sdk = new KidsoutSDK();
     console.log('Region:', region.attributes.name);
     console.log('Default Place:', region.defaultPlace?.attributes);
     console.log('Search Location:', region.searchLocation);
+  }
+  
+  // Fetch user reviews
+  const revResp = await sdk.getReviews({ user_id: 240466, per_page: 5 });
+  const reviews = ReviewModel.fromListResponse(revResp);
+  for (const review of reviews) {
+    console.log('Review:', review.attributes);
   }
 })();
 ```
