@@ -1,4 +1,4 @@
-import { Sitter, Avatar, ListResponse, JsonApiResource, Region, Place, SearchLocation } from './types';
+import { Sitter, Avatar, ListResponse, JsonApiResource, Region, Place, SearchLocation, Review } from './types';
 
 /**
  * Wrapper class for Sitter resource with related includes
@@ -68,6 +68,35 @@ export class SitterModel {
   ): SitterModel[] {
     const inc = resp.included || [];
     return resp.data.map(item => new SitterModel(item, inc));
+  }
+}
+
+/**
+ * Wrapper class for Review resource
+ */
+export class ReviewModel {
+  readonly data: Review;
+  constructor(data: Review) {
+    this.data = data;
+  }
+
+  /** Unique identifier of the review */
+  get id(): string {
+    return this.data.id;
+  }
+
+  /** Attributes object for the review */
+  get attributes(): Record<string, any> {
+    return this.data.attributes;
+  }
+
+  /**
+   * Factory to wrap a paginated response into ReviewModel instances
+   */
+  static fromListResponse(
+    resp: ListResponse<Review>
+  ): ReviewModel[] {
+    return resp.data.map(item => new ReviewModel(item));
   }
 }
 

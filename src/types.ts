@@ -58,6 +58,10 @@ export interface ResourceResponse<T> {
  */
 export type Place = JsonApiResource<Record<string, any>>;
 /**
+ * Review resource as returned by /reviews
+ */
+export type Review = JsonApiResource<Record<string, any>>;
+/**
  * Search location details as found in Region.attributes.search_location
  */
 export interface SearchLocation {

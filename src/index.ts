@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import { Sitter, Perk, Currency, Region, ListResponse } from './types';
+import { Sitter, Perk, Currency, Region, ListResponse, Review } from './types';
 
 export interface SearchSittersParams {
   date?: string;
@@ -172,4 +172,27 @@ export class KidsoutSDK {
     const response = await this.axiosInstance.get<ListResponse<Perk>>('/perks');
     return response.data;
   }
+  
+  /**
+   * Get reviews with optional filters. At least one of `user_id` or `token` should be provided.
+   */
+  async getReviews(
+    params: {
+      token?: string;
+      user_id?: number;
+      page?: number;
+      per_page?: number;
+      before?: number;
+    } = {}
+  ): Promise<ListResponse<Review>> {
+    const response = await this.axiosInstance.get<ListResponse<Review>>(
+      '/reviews',
+      { params }
+    );
+    return response.data;
+  }
 }
+
+// Export models and types for convenient imports
+export { SitterModel, RegionModel } from './models';
+export * from './types';

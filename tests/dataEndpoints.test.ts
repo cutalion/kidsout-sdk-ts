@@ -45,4 +45,15 @@ describe('KidsoutSDK data endpoints (VCR)', () => {
     expect(Array.isArray(data.data)).toBe(true);
     expect(data.data.length).toBeGreaterThan(0);
   });
+  
+  it('getReviews returns reviews list', async () => {
+    // Use a known user_id for which reviews may be empty
+    const data = await recordOrPlayback('reviews.json', () =>
+      sdk.getReviews({ user_id: 240466, per_page: 1 })
+    );
+    expect(data).toHaveProperty('data');
+    expect(Array.isArray(data.data)).toBe(true);
+    expect(data).toHaveProperty('meta');
+    expect(typeof data.meta.current_page).toBe('number');
+  });
 });
