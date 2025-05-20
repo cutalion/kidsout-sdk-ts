@@ -1,0 +1,112 @@
+{
+  "data": [
+    {
+      "id": "RUB_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "RUB",
+        "to": "USD",
+        "rate": 0.010664400467348156
+      }
+    },
+    {
+      "id": "KZT_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "KZT",
+        "to": "USD",
+        "rate": 0.0022639628806985176
+      }
+    },
+    {
+      "id": "GEL_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "GEL",
+        "to": "USD",
+        "rate": 0.37382870122189654
+      }
+    },
+    {
+      "id": "AMD_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "AMD",
+        "to": "USD",
+        "rate": 0.0025675857113772998
+      }
+    },
+    {
+      "id": "BGN_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "BGN",
+        "to": "USD",
+        "rate": 0.5464630181152491
+      }
+    },
+    {
+      "id": "TRY_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "TRY",
+        "to": "USD",
+        "rate": 0.030750494729334454
+      }
+    },
+    {
+      "id": "AZN_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "AZN",
+        "to": "USD",
+        "rate": 0.5895128030390564
+      }
+    },
+    {
+      "id": "UZS_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "UZS",
+        "to": "USD",
+        "rate": 0.00007907154459284615
+      }
+    },
+    {
+      "id": "RSD_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "RSD",
+        "to": "USD",
+        "rate": 0.009121924629769356
+      }
+    },
+    {
+      "id": "EUR_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "EUR",
+        "to": "USD",
+        "rate": 1.0687585834673734
+      }
+    },
+    {
+      "id": "ILS_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "ILS",
+        "to": "USD",
+        "rate": 0.26498735347855523
+      }
+    },
+    {
+      "id": "AED_TO_USD",
+      "type": "currency_rates",
+      "attributes": {
+        "from": "AED",
+        "to": "USD",
+        "rate": 0.2722642008242527
+      }
+    }
+  ]
+}

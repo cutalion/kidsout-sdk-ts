@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import { Sitter, Perk, Currency, Region, ListResponse, Review } from './types';
+import { Sitter, Perk, Currency, Region, ListResponse, Review, NewsResponse, CurrencyRatesResponse } from './types';
 
 export interface SearchSittersParams {
   date?: string;
@@ -191,8 +191,50 @@ export class KidsoutSDK {
     );
     return response.data;
   }
+
+  async getNews(
+    params: {
+      page?: number;
+      per_page?: number;
+      before?: number; // timestamp
+    } = {}
+  ): Promise<NewsResponse> {
+    try {
+      const response = await this.axiosInstance.get<NewsResponse>(
+        '/news',
+        { params }
+      );
+      return response.data;
+    } catch (error: any) {
+      // Re-throw a simpler error to avoid circular structures in Jest
+      if (axios.isAxiosError(error)) {
+        throw new Error(`Axios error fetching news: ${error.message} (status: ${error.response?.status})`);
+      }
+      throw new Error(`Error fetching news: ${error.message || String(error)}`);
+    }
+  }
+
+  async getCurrencyRates(base?: string): Promise<CurrencyRatesResponse> {
+    const params: { base?: string } = {};
+    if (base) {
+      params.base = base;
+    }
+    try {
+      const response = await this.axiosInstance.get<CurrencyRatesResponse>(
+        '/currencies/rates',
+        { params }
+      );
+      return response.data;
+    } catch (error: any) {
+      // Re-throw a simpler error to avoid circular structures in Jest
+      if (axios.isAxiosError(error)) {
+        throw new Error(`Axios error fetching currency rates: ${error.message} (status: ${error.response?.status})`);
+      }
+      throw new Error(`Error fetching currency rates: ${error.message || String(error)}`);
+    }
+  }
 }
 
 // Export models and types for convenient imports
-export { SitterModel, RegionModel } from './models';
+export { SitterModel, RegionModel, CurrencyRateModel } from './models';
 export * from './types';

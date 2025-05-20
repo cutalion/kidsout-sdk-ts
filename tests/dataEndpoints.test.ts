@@ -17,7 +17,12 @@ async function recordOrPlayback(
   } else {
     const data = await fn();
     fs.mkdirSync(cassetteDir, { recursive: true });
-    fs.writeFileSync(cassettePath, JSON.stringify(data, null, 2));
+    try {
+      fs.writeFileSync(cassettePath, JSON.stringify(data, null, 2));
+    } catch (error) {
+      console.error('Error during JSON.stringify or writeFileSync:', error);
+      throw error; // Re-throw the error to fail the test
+    }
     return data;
   }
 }
@@ -55,5 +60,32 @@ describe('KidsoutSDK data endpoints (VCR)', () => {
     expect(Array.isArray(data.data)).toBe(true);
     expect(data).toHaveProperty('meta');
     expect(typeof data.meta.current_page).toBe('number');
+  });
+
+  it('getCurrencyRates returns currency rates list', async () => {
+    const response = await recordOrPlayback('currency-rates.json', () =>
+      sdk.getCurrencyRates() // Using default base for the test
+    );
+    expect(response).toHaveProperty('data');
+    expect(Array.isArray(response.data)).toBe(true);
+    if (response.data.length > 0) { // Only check item structure if data exists
+      const firstRate = response.data[0];
+      expect(firstRate).toHaveProperty('id');
+      expect(typeof firstRate.id).toBe('string');
+      expect(firstRate).toHaveProperty('type');
+      expect(firstRate.type).toBe('currency_rates');
+      expect(firstRate).toHaveProperty('attributes');
+      expect(typeof firstRate.attributes).toBe('object');
+      expect(firstRate.attributes).toHaveProperty('from');
+      expect(typeof firstRate.attributes.from).toBe('string');
+      expect(firstRate.attributes).toHaveProperty('to');
+      expect(typeof firstRate.attributes.to).toBe('string');
+      expect(firstRate.attributes).toHaveProperty('rate');
+      expect(typeof firstRate.attributes.rate).toBe('number');
+    }
+    // The /currencies/rates endpoint might not return meta if not paginated
+    // If it's confirmed to be paginated, these checks can be added:
+    // expect(response).toHaveProperty('meta');
+    // expect(typeof response.meta.current_page).toBe('number');
   });
 });

@@ -45,6 +45,27 @@ export interface ListResponse<T> {
   };
 }
 
+export interface CurrencyRateAttributes {
+  from: string;
+  to: string;
+  rate: number;
+}
+
+export type CurrencyRate = JsonApiResource<CurrencyRateAttributes>;
+
+export type CurrencyRatesResponse = ListResponse<CurrencyRate>;
+
+export interface NewsItem {
+  id: number;
+  title: string;
+  body: string;
+  published_at: string; // ISO date string
+  is_read: boolean;
+  // Add any other relevant fields based on the actual API response
+}
+
+export type NewsResponse = ListResponse<NewsItem>;
+
 /**
  * Generic single resource response wrapper
  */

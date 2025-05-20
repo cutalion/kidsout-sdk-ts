@@ -71,6 +71,18 @@ export class SitterModel {
   }
 }
 
+export class CurrencyRateModel {
+  public from: string;
+  public to: string;
+  public rate: number;
+
+  constructor(data: { from: string; to: string; rate: number }) {
+    this.from = data.from;
+    this.to = data.to;
+    this.rate = data.rate;
+  }
+}
+
 /**
  * Wrapper class for Review resource
  */
