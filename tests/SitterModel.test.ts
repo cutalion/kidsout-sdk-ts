@@ -1,11 +1,11 @@
 import { SitterModel } from '../src/models';
-import { Sitter, Avatar, ListResponse, JsonApiResource } from '../src/types';
+import { Sitter, Avatar, ListResponse, JsonApiResource, InaccurateLocation, MetaTag } from '../src/types';
 
 describe('SitterModel', () => {
   const sitterData: Sitter = {
     id: '123',
     type: 'users',
-    attributes: { name: 'Alice' },
+    attributes: { first_name: 'Alice' }, // Changed name to first_name
   };
   const sitterDataWithRels: Sitter = {
     ...sitterData,
@@ -25,15 +25,15 @@ describe('SitterModel', () => {
     type: 'avatars',
     attributes: { url: 'https://example.com/avatar2.png' },
   };
-  const inaccurateLocationData: JsonApiResource<Record<string, any>> = {
+  const inaccurateLocationData: InaccurateLocation = { // Changed type
     id: 'inacc1',
     type: 'inaccurate_locations',
-    attributes: { foo: 'bar' },
+    attributes: { latitude: 10, longitude: 20, foo: 'bar' }, // Added optional known attrs
   };
-  const metaTagData: JsonApiResource<Record<string, any>> = {
+  const metaTagData: MetaTag = { // Changed type
     id: 'meta1',
     type: 'meta_tags',
-    attributes: { baz: 'qux' },
+    attributes: { title: 'Sitter Page', baz: 'qux' }, // Added optional known attrs
   };
 
   it('returns undefined avatar when none included', () => {

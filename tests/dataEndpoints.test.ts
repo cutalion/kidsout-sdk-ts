@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import axios from 'axios'; // For mocking
 import { KidsoutSDK } from '../src/index';
+import { KidsoutApiError } from '../src/errors';
 
 const cassetteDir = path.resolve(__dirname, 'fixtures');
 
@@ -87,5 +89,49 @@ describe('KidsoutSDK data endpoints (VCR)', () => {
     // If it's confirmed to be paginated, these checks can be added:
     // expect(response).toHaveProperty('meta');
     // expect(typeof response.meta.current_page).toBe('number');
+  });
+
+  describe('Error Handling', () => {
+    it('should wrap Axios errors in KidsoutApiError', async () => {
+      const sdk = new KidsoutSDK();
+      const mockError = {
+        isAxiosError: true,
+        message: 'Request failed with status code 404',
+        response: {
+          status: 404,
+          data: { message: 'Not Found' },
+        },
+      };
+      // Mock axiosInstance.get to simulate an API error
+      // Need to access the internal axiosInstance or mock globally
+      const mockAxiosInstance = (sdk as any).axiosInstance;
+      jest.spyOn(mockAxiosInstance, 'get').mockRejectedValueOnce(mockError);
+
+      try {
+        await sdk.getRegions(); // Any method that uses .get()
+        fail('Expected an error to be thrown');
+      } catch (error: any) {
+        expect(error).toBeInstanceOf(KidsoutApiError);
+        expect(error.message).toBe('Not Found'); // Message from response.data.message
+        expect(error.status).toBe(404);
+        expect(error.originalError).toBe(mockError);
+      }
+    });
+  });
+
+  describe('Authentication Header', () => {
+    it('should set Authorization header if apiKey is provided', () => {
+      const apiKey = 'test-api-key';
+      const sdkWithAuth = new KidsoutSDK('https://api.kidsout.ru/api/v2', apiKey);
+      // Accessing private member for testing purposes
+      const axiosInstance = (sdkWithAuth as any).axiosInstance;
+      expect(axiosInstance.defaults.headers.common['Authorization']).toBe(`Bearer ${apiKey}`);
+    });
+
+    it('should not set Authorization header if apiKey is not provided', () => {
+      const sdkWithoutAuth = new KidsoutSDK();
+      const axiosInstance = (sdkWithoutAuth as any).axiosInstance;
+      expect(axiosInstance.defaults.headers.common['Authorization']).toBeUndefined();
+    });
   });
 });

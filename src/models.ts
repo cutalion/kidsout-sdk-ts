@@ -1,63 +1,109 @@
-import { Sitter, Avatar, ListResponse, JsonApiResource, Region, Place, SearchLocation, Review } from './types';
+import {
+  Sitter, // Sitter is now User
+  UserAttributes,
+  Avatar,
+  ListResponse,
+  JsonApiResource,
+  Region,
+  RegionAttributes,
+  Place,
+  SearchLocation,
+  Review,
+  ReviewAttributes,
+  IncludedResource,
+  InaccurateLocation, // Added for SitterModel
+  MetaTag             // Added for SitterModel
+} from './types';
+
 
 /**
- * Wrapper class for Sitter resource with related includes
+ * Base model class for JSON:API resources.
  */
-export class SitterModel {
-  /** Raw JSON:API sitter resource */
-  readonly data: Sitter;
-  /** Included related resources */
-  readonly included: Array<Avatar | any>;
+export class BaseModel<AttrType, ResType extends JsonApiResource<AttrType>> {
+  readonly data: ResType;
+  readonly included: Array<IncludedResource>;
 
-  constructor(data: Sitter, included: Array<Avatar | any> = []) {
+  constructor(data: ResType, included: Array<IncludedResource> = []) {
     this.data = data;
     this.included = included;
   }
 
-  /** Unique identifier of the sitter */
+  /** Unique identifier of the resource */
   get id(): string {
     return this.data.id;
   }
 
-  /** Attributes object for the sitter */
-  get attributes(): Record<string, any> {
+  /** Attributes object for the resource */
+  get attributes(): AttrType {
     return this.data.attributes;
   }
+
+  /**
+   * Helper to get a related resource from the 'included' array.
+   * Handles to-one and to-many (returning the first element) relationships.
+   * @param relationshipName The name of the relationship key in `this.data.relationships`.
+   * @param expectedType The 'type' string of the expected related resource.
+   */
+  protected _getRelatedResource<RelType extends IncludedResource>(
+    relationshipName: string,
+    expectedType: RelType['type']
+  ): RelType | undefined {
+    const relationship = this.data.relationships?.[relationshipName]?.data;
+    if (!relationship) {
+      return undefined;
+    }
+
+    let resourceIdentifier: { id: string; type: string } | undefined;
+
+    if (Array.isArray(relationship)) {
+      // Handle to-many, take the first item if available
+      if (relationship.length > 0) {
+        resourceIdentifier = relationship[0] as { id: string; type: string };
+      }
+    } else {
+      // Handle to-one
+      resourceIdentifier = relationship as { id: string; type: string };
+    }
+
+    if (resourceIdentifier && resourceIdentifier.id && resourceIdentifier.type === expectedType) {
+      return this.included.find(
+        (inc): inc is RelType => inc.id === resourceIdentifier!.id && inc.type === expectedType
+      );
+    }
+    return undefined;
+  }
+}
+
+
+/**
+ * Wrapper class for Sitter resource with related includes
+ */
+export class SitterModel extends BaseModel<UserAttributes, Sitter> {
+  constructor(data: Sitter, included: Array<IncludedResource> = []) {
+    super(data, included);
+  }
+
+  // id and attributes getters are inherited
 
   /**
    * Returns the related Avatar resource, if included
    */
   get avatar(): Avatar | undefined {
-    const rel = (this.data.relationships?.avatars?.data as Array<{ id: string }> | undefined);
-    const ref = Array.isArray(rel) && rel.length > 0 ? rel[0].id : undefined;
-    if (!ref) return undefined;
-    return this.included.find(
-      (res): res is Avatar => res.type === 'avatars' && res.id === ref
-    );
+    return this._getRelatedResource<Avatar>('avatars', 'avatars');
   }
 
   /**
    * Returns the related InaccurateLocation resource, if included
    */
-  get inaccurateLocation(): JsonApiResource<Record<string, any>> | undefined {
-    const rel = (this.data.relationships?.inaccurate_location?.data as { id: string } | undefined);
-    if (!rel?.id) return undefined;
-    return this.included.find(
-      (res): res is JsonApiResource<Record<string, any>> =>
-        res.type === 'inaccurate_locations' && res.id === rel.id
-    );
+  get inaccurateLocation(): InaccurateLocation | undefined {
+    return this._getRelatedResource<InaccurateLocation>('inaccurate_location', 'inaccurate_locations');
   }
 
   /**
    * Returns the related MetaTag resource, if included
    */
-  get metaTags(): JsonApiResource<Record<string, any>> | undefined {
-    const rel = (this.data.relationships?.meta_tags?.data as { id: string } | undefined);
-    if (!rel?.id) return undefined;
-    return this.included.find(
-      (res): res is JsonApiResource<Record<string, any>> =>
-        res.type === 'meta_tags' && res.id === rel.id
-    );
+  get metaTags(): MetaTag | undefined {
+    return this._getRelatedResource<MetaTag>('meta_tags', 'meta_tags');
   }
 
   /**
@@ -86,21 +132,12 @@ export class CurrencyRateModel {
 /**
  * Wrapper class for Review resource
  */
-export class ReviewModel {
-  readonly data: Review;
-  constructor(data: Review) {
-    this.data = data;
+export class ReviewModel extends BaseModel<ReviewAttributes, Review> {
+  constructor(data: Review, included: Array<IncludedResource> = []) {
+    super(data, included);
   }
 
-  /** Unique identifier of the review */
-  get id(): string {
-    return this.data.id;
-  }
-
-  /** Attributes object for the review */
-  get attributes(): Record<string, any> {
-    return this.data.attributes;
-  }
+  // id and attributes getters are inherited
 
   /**
    * Factory to wrap a paginated response into ReviewModel instances
@@ -115,34 +152,18 @@ export class ReviewModel {
 /**
  * Wrapper class for Region resource with related includes
  */
-export class RegionModel {
-  readonly data: Region;
-  readonly included: Array<Place | any>;
-
-  constructor(data: Region, included: Array<Place | any> = []) {
-    this.data = data;
-    this.included = included;
+export class RegionModel extends BaseModel<RegionAttributes, Region> {
+  constructor(data: Region, included: Array<IncludedResource> = []) {
+    super(data, included);
   }
 
-  /** Unique identifier of the region */
-  get id(): string {
-    return this.data.id;
-  }
-
-  /** Attributes object for the region */
-  get attributes(): Record<string, any> {
-    return this.data.attributes;
-  }
+  // id and attributes getters are inherited
 
   /**
    * Returns the related default Place resource, if included
    */
   get defaultPlace(): Place | undefined {
-    const rel = (this.data.relationships?.default_place?.data as { id: string } | undefined);
-    if (!rel?.id) return undefined;
-    return this.included.find(
-      (res): res is Place => res.type === 'places' && res.id === rel.id
-    );
+    return this._getRelatedResource<Place>('default_place', 'places');
   }
   
   /**
