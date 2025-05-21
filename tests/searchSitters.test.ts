@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { KidsoutSDK } from '../src/index';
+import { KidsoutSDK, SitterModel } from '../src/index'; // Import SitterModel
 
 const CASSETTE_PATH = path.resolve(__dirname, 'fixtures', 'searchSitters.json');
 
@@ -22,5 +22,14 @@ describe('KidsoutSDK.searchSitters E2E with VCR', () => {
     // Pagination metadata should be present
     expect(data).toHaveProperty('meta');
     expect(typeof data.meta.current_page).toBe('number');
+
+    // Verify that the response can be processed by SitterModel
+    if (data.data.length > 0) {
+      const models = SitterModel.fromListResponse(data);
+      expect(models[0]).toBeInstanceOf(SitterModel);
+      // Optionally, check a very stable attribute if one exists across all fixture entries
+      // For example, checking if attributes object exists:
+      expect(models[0].attributes).toBeDefined();
+    }
   });
 });

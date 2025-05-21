@@ -5,13 +5,16 @@ describe('ReviewModel', () => {
   const reviewData: Review = {
     id: 'r1',
     type: 'reviews',
-    attributes: { rating: 5, comment: 'Great sitter!' },
+    // Attributes should match ReviewAttributes: rate and body
+    attributes: { rate: 1, body: 'Great sitter!' }, 
   };
 
   it('returns id and attributes correctly', () => {
     const model = new ReviewModel(reviewData);
     expect(model.id).toBe('r1');
-    expect(model.attributes).toEqual({ rating: 5, comment: 'Great sitter!' });
+    // Ensure the test expects the actual attributes defined in ReviewAttributes
+    expect(model.attributes.rate).toBe(1);
+    expect(model.attributes.body).toBe('Great sitter!');
   });
 
   it('fromListResponse wraps data into models', () => {
@@ -24,6 +27,6 @@ describe('ReviewModel', () => {
     expect(models).toHaveLength(1);
     expect(models[0]).toBeInstanceOf(ReviewModel);
     expect(models[0].id).toBe('r1');
-    expect(models[0].attributes.rating).toBe(5);
+    expect(models[0].attributes.rate).toBe(1); // Changed from rating to rate
   });
 });

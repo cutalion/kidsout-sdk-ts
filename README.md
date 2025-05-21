@@ -44,6 +44,15 @@ const sdk = new KidsoutSDK();
 })();
 ```
 
+## Key Features
+
+*   **Modern TypeScript Support**: Built with TypeScript for a better developer experience, including type safety and autocompletion.
+*   **Zod-based Parameter Validation**: Robust validation for method parameters (e.g., `searchSitters`) using Zod, providing clear error messages for invalid inputs.
+*   **Enhanced Error Handling**: The SDK provides structured error objects (`KidsoutApiError`, `KidsoutValidationError`) for better error diagnostics. See JSDoc on these error classes for usage examples.
+*   **API Key Authentication**: Supports API key authentication by passing an optional `apiKey` to the SDK constructor. See JSDoc for the `KidsoutSDK` constructor for details.
+*   **Typed Models & Specific Attributes**: Includes TypeScript models for API resources (e.g., `SitterModel`, `RegionModel`), offering more specific attribute types and helper methods to access related data.
+*   **JSON:API Relationship Handling**: Model classes provide convenient getters for accessing related resources from the `included` data in API responses.
+
 ## Resource Models
 
 For easier access to related resources, use the provided model classes:
@@ -95,9 +104,11 @@ const sdk = new KidsoutSDK();
 
 ## API
 
-### new KidsoutSDK(baseURL?)
+### new KidsoutSDK(baseURL?, apiKey?)
 
-Creates a new SDK instance. Defaults to `https://api.kidsout.ru/api/v2`.
+Creates a new SDK instance.
+- `baseURL` (optional): Defaults to `https://api.kidsout.ru/api/v2`.
+- `apiKey` (optional): Your API key for authentication. If provided, it sets the `Authorization: Bearer <apiKey>` header for all requests.
 
 ### searchSitters(params)
 
