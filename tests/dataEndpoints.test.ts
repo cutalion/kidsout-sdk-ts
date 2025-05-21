@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios'; // For mocking
+import AxiosMockAdapter from 'axios-mock-adapter'; // Import the mock adapter
 import { KidsoutSDK } from '../src/index';
 import { KidsoutApiError } from '../src/errors';
 
@@ -94,27 +95,25 @@ describe('KidsoutSDK data endpoints (VCR)', () => {
   describe('Error Handling', () => {
     it('should wrap Axios errors in KidsoutApiError', async () => {
       const sdk = new KidsoutSDK();
-      const mockError = {
-        isAxiosError: true,
-        message: 'Request failed with status code 404',
-        response: {
-          status: 404,
-          data: { message: 'Not Found' },
-        },
-      };
-      // Mock axiosInstance.get to simulate an API error
-      // Need to access the internal axiosInstance or mock globally
-      const mockAxiosInstance = (sdk as any).axiosInstance;
-      jest.spyOn(mockAxiosInstance, 'get').mockRejectedValueOnce(mockError);
+      const axiosInstance = (sdk as any).axiosInstance;
+      const mockAdapter = new AxiosMockAdapter(axiosInstance);
+
+      // Simulate a GET request to /regions that returns a 404 error
+      const responseData = { message: 'Not Found' };
+      mockAdapter.onGet('/regions').reply(404, responseData);
 
       try {
-        await sdk.getRegions(); // Any method that uses .get()
+        await sdk.getRegions(); // This call should now go through the interceptor
         fail('Expected an error to be thrown');
       } catch (error: any) {
         expect(error).toBeInstanceOf(KidsoutApiError);
-        expect(error.message).toBe('Not Found'); // Message from response.data.message
+        expect(error.message).toBe('Not Found'); // Or whatever message KidsoutApiError constructor sets
         expect(error.status).toBe(404);
-        expect(error.originalError).toBe(mockError);
+        // Check the originalError if needed, it should be an AxiosError instance
+        expect(error.originalError).toBeInstanceOf(axios.AxiosError);
+        expect(error.originalError.response?.data).toEqual(responseData);
+      } finally {
+        mockAdapter.restore(); // Clean up the mock adapter
       }
     });
   });

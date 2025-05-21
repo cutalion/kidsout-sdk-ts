@@ -15,7 +15,8 @@ const allowedSorts = [
   '-kidsout_score',
 ] as const;
 
-const SearchSittersParamsSchema = z.object({
+// Define a base schema without self-referential refinements
+const SearchSittersParamsBaseSchema = z.object({
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Invalid date format; expected YYYY-MM-DD").optional(),
   start: z.string().regex(/^(?:[01]\d|2[0-3]):[0-5]\d$/, "Invalid start time; expected HH:MM").optional(),
   end: z.string().regex(/^(?:[01]\d|2[0-3]):[0-5]\d$/, "Invalid end time; expected HH:MM").optional(),
@@ -41,15 +42,23 @@ const SearchSittersParamsSchema = z.object({
     bl: z.object({ lat: z.number(), lon: z.number() }),
     tr: z.object({ lat: z.number(), lon: z.number() }),
   }).optional(),
-})
-  .refine(data => data.min_rate === undefined || data.max_rate === undefined || data.min_rate <= data.max_rate, {
+});
+
+// Infer the type from the base schema
+export type SearchSittersParams = z.infer<typeof SearchSittersParamsBaseSchema>;
+
+// Now, extend the base schema with refinements that can use the inferred type
+const SearchSittersParamsSchema = SearchSittersParamsBaseSchema.refine(
+  (data: SearchSittersParams) => data.min_rate === undefined || data.max_rate === undefined || data.min_rate <= data.max_rate, {
     message: "min_rate cannot be greater than max_rate",
     path: ["min_rate"],
-  })
-  .refine(data => !(data.distance !== undefined && data.bbox !== undefined), {
+  }
+).refine(
+  (data: SearchSittersParams) => !(data.distance !== undefined && data.bbox !== undefined), {
     message: "distance and bbox are mutually exclusive",
     path: ["distance"], // Or path: ["bbox"] or a general path
-  });
+  }
+);
 // The superRefine for individual bbox.bl/tr presence and their lat/lon content
 // is handled by the schema definition:
 // bbox: z.object({
@@ -57,8 +66,6 @@ const SearchSittersParamsSchema = z.object({
 //   tr: z.object({ lat: z.number(), lon: z.number() }), // lat/lon required if tr present
 // }).optional()
 // If bbox is provided, 'bl' and 'tr' must be objects satisfying their respective schemas.
-
-export type SearchSittersParams = z.infer<typeof SearchSittersParamsSchema>;
 
 // The original interface SearchSittersParams is now replaced by the Zod inferred type.
 // We keep the export of the type, but the interface definition itself is removed.
@@ -155,7 +162,7 @@ export class KidsoutSDK {
     const validationResult = SearchSittersParamsSchema.safeParse(params);
 
     if (!validationResult.success) {
-      const issues = validationResult.error.errors.map(e => `${e.path.join('.') || 'parameter'}: ${e.message}`);
+      const issues = validationResult.error.errors.map((e: z.ZodIssue) => `${e.path.join('.') || 'parameter'}: ${e.message}`);
       throw new KidsoutValidationError('Invalid search parameters', issues);
     }
 
@@ -172,7 +179,7 @@ export class KidsoutSDK {
     // Handle fields sparse fieldsets
     if (validatedParams.fields) {
       for (const [resource, fieldsArray] of Object.entries(validatedParams.fields)) {
-        query[`fields[${resource}]`] = (fieldsArray || []).join(',');
+        query[`fields[${resource}]`] = ((fieldsArray as string[]) || []).join(',');
       }
       delete query.fields; // remove the object form
     }
