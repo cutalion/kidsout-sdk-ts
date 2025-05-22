@@ -2,7 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## 0.0.9 - 2025-05-22
+## 0.0.11 - 2025-05-23
+
+### Added
+
+- SDK `version` property that automatically syncs with package.json version
+- Build-time version replacement for browser compatibility
+
+## 0.0.10 - 2025-05-22
 
 ### Documentation
 

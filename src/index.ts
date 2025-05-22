@@ -3,6 +3,9 @@ import { z } from 'zod';
 import { Sitter, Perk, Currency, Region, ListResponse, Review, NewsResponse, CurrencyRatesResponse } from './types';
 import { KidsoutApiError, KidsoutValidationError } from './errors';
 
+// Version will be replaced at build time
+const SDK_VERSION = '__SDK_VERSION__';
+
 const allowedSorts = [
   'experience',
   '-experience',
@@ -115,6 +118,9 @@ const SearchSittersParamsSchema = SearchSittersParamsBaseSchema.refine(
  */
 export class KidsoutSDK {
   private axiosInstance: AxiosInstance;
+  
+  /** SDK version */
+  public readonly version: string = SDK_VERSION;
 
   /**
    * Creates an instance of KidsoutSDK.
