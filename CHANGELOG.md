@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.8 - 2025-05-22
+
+### Documentation
+
+- Target es2022
+
+## 0.0.7 - 2025-05-22
+
+### Documentation
+
+- Update changelog
+
 ## [0.0.6] - 2025-05-20
 
 ### Added
