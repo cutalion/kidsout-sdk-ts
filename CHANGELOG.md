@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.12 - 2025-05-23
+
+### Fixed
+
+- ES module imports now use .js extensions for Node.js compatibility
+
 ## 0.0.11 - 2025-05-23
 
 ### Added

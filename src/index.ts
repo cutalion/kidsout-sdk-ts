@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosError } from "axios";
 import { z } from 'zod';
-import { Sitter, Perk, Currency, Region, ListResponse, Review, NewsResponse, CurrencyRatesResponse } from './types';
-import { KidsoutApiError, KidsoutValidationError } from './errors';
+import { Sitter, Perk, Currency, Region, ListResponse, Review, NewsResponse, CurrencyRatesResponse } from './types.js';
+import { KidsoutApiError, KidsoutValidationError } from './errors.js';
 
 // Version will be replaced at build time
 const SDK_VERSION = '__SDK_VERSION__';
@@ -303,8 +303,8 @@ export class KidsoutSDK {
 }
 
 // Export models and types for convenient imports
-export { SitterModel, RegionModel, CurrencyRateModel } from './models';
-export * from './types';
+export { SitterModel, RegionModel, CurrencyRateModel } from './models.js';
+export * from './types.js';
 // Do not export SearchSittersParams, it's an internal type now inferred from Zod schema
 // export type { SearchSittersParams } from './index'; // This line would cause issues if SearchSittersParams is redefined
-export { KidsoutApiError, KidsoutValidationError } from './errors';
+export { KidsoutApiError, KidsoutValidationError } from './errors.js';

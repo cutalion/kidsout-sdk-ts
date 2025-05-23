@@ -13,7 +13,7 @@ import {
   IncludedResource,
   InaccurateLocation, // Added for SitterModel
   MetaTag             // Added for SitterModel
-} from './types';
+} from './types.js';
 
 
 /**
