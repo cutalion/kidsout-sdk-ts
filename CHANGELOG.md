@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.013 - 2025-05-23
+
+### Fixed
+
+- Refactor: Replace Jest with Vitest for ESM support
+
 ## 0.0.12 - 2025-05-23
 
 ### Fixed
