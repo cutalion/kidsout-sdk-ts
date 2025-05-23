@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { KidsoutSDK } from '../src/index';
 import { KidsoutValidationError } from '../src/errors';
 

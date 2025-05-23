@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios'; // For mocking
@@ -104,7 +105,7 @@ describe('KidsoutSDK data endpoints (VCR)', () => {
 
       try {
         await sdk.getRegions(); // This call should now go through the interceptor
-        fail('Expected an error to be thrown');
+        expect.fail('Expected an error to be thrown');
       } catch (error: any) {
         expect(error).toBeInstanceOf(KidsoutApiError);
         expect(error.message).toBe('Not Found'); // Or whatever message KidsoutApiError constructor sets

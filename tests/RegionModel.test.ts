@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { RegionModel } from '../src/models';
 import { Region, Place, ListResponse, SearchLocation } from '../src/types';
 

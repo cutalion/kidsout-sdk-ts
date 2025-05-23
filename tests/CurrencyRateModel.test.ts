@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { CurrencyRateModel } from '../src/models';
 import * as currencyRatesFixture from './fixtures/currency-rates.json';
 

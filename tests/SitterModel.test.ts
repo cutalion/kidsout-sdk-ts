@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { SitterModel } from '../src/models';
 import { Sitter, Avatar, ListResponse, JsonApiResource, InaccurateLocation, MetaTag } from '../src/types';
 
