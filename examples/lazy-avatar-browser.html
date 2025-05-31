@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Kidsout API - Lazy Loading Avatars Demo</title>
+    
+    <!-- Import map to resolve bare module specifiers -->
+    <script type="importmap">
+    {
+      "imports": {
+        "axios": "https://unpkg.com/axios@0.30.0/dist/esm/axios.min.js",
+        "zod": "https://unpkg.com/zod@3.25.42/dist/esm/index.js"
+      }
+    }
+    </script>
+    
+    <!-- HTMX for enhanced interactivity -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    
+    <!-- External CSS for styles -->
+    <link rel="stylesheet" href="lazy-avatar-styles.css">
+</head>
+<body>
+    <h1>Real Kidsout API - Lazy Loading Avatars Demo</h1>
+    
+    <div class="api-notice">
+        🔗 This demo now uses real data from api.kidsout.ru with the KidsoutSDK
+    </div>
+    
+    <div id="browser-check" class="api-notice" style="background: #fff3cd; border-color: #ffeaa7; color: #856404; display: none;">
+        ⚠️ Your browser may not support import maps. Please use a modern browser (Chrome 89+, Firefox 108+, Safari 16.4+)
+    </div>
+    
+    <div class="stats" id="stats">
+        Loading sitters...
+    </div>
+    
+    <div id="sitters-container" hx-target="#sitters-container" hx-swap="beforeend">
+        <!-- Sitter cards will be inserted here -->
+    </div>
+    
+    <div class="load-more">
+        <button id="load-more-btn" 
+                hx-trigger="click"
+                hx-swap="none"
+                onclick="loadMoreSittersHtmx(this)">Load More Sitters (HTMX Enhanced)</button>
+        <div id="loading-indicator" class="htmx-indicator" style="display: none;">
+            <span>🔄 Loading more sitters via HTMX...</span>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import KidsoutSDK and SitterModel from the actual library
+        import { KidsoutSDK, SitterModel } from '../dist/index.js';
+        
+        // Check for import map support
+        if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) {
+            document.getElementById('browser-check').style.display = 'block';
+        }
+        
+        class LazyAvatarManager {
+            constructor() {
+                this.observer = null;
+                this.loadedAvatars = new Set();
+                this.loadingAvatars = new Set();
+                this.setupIntersectionObserver();
+            }
+
+            setupIntersectionObserver() {
+                const options = {
+                    root: null,
+                    rootMargin: '50px',
+                    threshold: 0.1
+                };
+
+                this.observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            this.loadAvatar(entry.target);
+                        }
+                    });
+                }, options);
+            }
+
+            async loadAvatar(avatarContainer) {
+                const sitterId = avatarContainer.dataset.sitterId;
+                const avatarUrl = avatarContainer.dataset.avatarUrl;
+
+                if (this.loadedAvatars.has(sitterId) || this.loadingAvatars.has(sitterId)) {
+                    return;
+                }
+
+                this.loadingAvatars.add(sitterId);
+                
+                // Stop observing this element
+                this.observer.unobserve(avatarContainer);
+
+                // Show loading spinner
+                const loadingSpinner = avatarContainer.querySelector('.avatar-loading');
+                if (loadingSpinner) {
+                    loadingSpinner.style.display = 'block';
+                }
+
+                try {
+                    // Simulate network delay for demonstration
+                    await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 1000));
+                    
+                    const img = new Image();
+                    
+                    await new Promise((resolve, reject) => {
+                        img.onload = resolve;
+                        img.onerror = reject;
+                        img.src = avatarUrl;
+                    });
+
+                    // Hide placeholder and loading spinner
+                    const placeholder = avatarContainer.querySelector('.avatar-placeholder');
+                    if (placeholder) {
+                        placeholder.style.display = 'none';
+                    }
+                    
+                    if (loadingSpinner) {
+                        loadingSpinner.style.display = 'none';
+                    }
+
+                    // Show the loaded image
+                    const avatarImg = avatarContainer.querySelector('.avatar-image');
+                    if (avatarImg) {
+                        avatarImg.src = avatarUrl;
+                        avatarImg.classList.add('loaded');
+                    }
+
+                    this.loadedAvatars.add(sitterId);
+                    
+                } catch (error) {
+                    console.error(`Failed to load avatar for sitter ${sitterId}:`, error);
+                    
+                    // Hide loading spinner on error
+                    if (loadingSpinner) {
+                        loadingSpinner.style.display = 'none';
+                    }
+                } finally {
+                    this.loadingAvatars.delete(sitterId);
+                    this.updateStats();
+                }
+            }
+
+            observeAvatar(avatarContainer) {
+                this.observer.observe(avatarContainer);
+            }
+
+            updateStats() {
+                const statsEl = document.getElementById('stats');
+                const total = document.querySelectorAll('.avatar-container').length;
+                
+                statsEl.textContent = `Avatars: ${this.loadedAvatars.size}/${total} loaded, ${this.loadingAvatars.size} loading`;
+            }
+            
+            // New method to observe newly added avatars (for HTMX content)
+            observeNewAvatars() {
+                const newAvatars = document.querySelectorAll('.avatar-container:not([data-observed])');
+                newAvatars.forEach(avatar => {
+                    if (avatar.dataset.avatarUrl) {
+                        this.observeAvatar(avatar);
+                        avatar.setAttribute('data-observed', 'true');
+                    }
+                });
+                this.updateStats();
+            }
+        }
+
+        // Global instances
+        let avatarManager;
+        let sdk;
+        let currentPage = 1;
+
+        async function initializeSDK() {
+            try {
+                // Initialize the KidsoutSDK
+                sdk = new KidsoutSDK('https://api.kidsout.ru/api/v2');
+                console.log('KidsoutSDK initialized successfully');
+            } catch (error) {
+                console.error('Failed to initialize KidsoutSDK:', error);
+                throw error;
+            }
+        }
+
+        function createSitterCard(sitter) {
+            // Use SitterModel properties
+            const avatarUrl = sitter.avatar?.attributes?.image?.thumb || '';
+            const name = sitter.attributes.name || 'Unknown';
+            const age = sitter.attributes.age || 'N/A';
+            const experienceYears = sitter.attributes.experience_years || 0;
+            const rate = sitter.attributes.rate || 'N/A';
+            const rateCurrency = sitter.attributes.rate_currency || '';
+            
+            return `
+                <div class="sitter-card">
+                    <div class="avatar-container" data-sitter-id="${sitter.id}" data-avatar-url="${avatarUrl}">
+                        <div class="avatar-placeholder">👤</div>
+                        <div class="avatar-loading" style="display: none;"></div>
+                        <img class="avatar-image" alt="${name}" />
+                    </div>
+                    <div class="sitter-info">
+                        <div class="sitter-name">${name}</div>
+                        <div class="sitter-details">
+                            Age: ${age} | 
+                            Experience: ${experienceYears} years | 
+                            Rate: ${rate} ${rateCurrency}/hour
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function loadInitialSitters() {
+            try {
+                const statsEl = document.getElementById('stats');
+                statsEl.textContent = 'Loading initial sitters from API...';
+
+                const response = await sdk.searchSitters({
+                    include: ['avatars', 'inaccurate_location'],
+                    page: 1,
+                    per_page: 5
+                });
+
+                const sitterModels = SitterModel.fromListResponse(response);
+                const container = document.getElementById('sitters-container');
+                
+                sitterModels.forEach(sitter => {
+                    const cardHtml = createSitterCard(sitter);
+                    container.insertAdjacentHTML('beforeend', cardHtml);
+                });
+                
+                // Set up lazy loading for initial avatars
+                avatarManager.observeNewAvatars();
+                
+                // Update page counter for HTMX
+                currentPage = 1;
+                updateLoadMoreButton();
+                
+                statsEl.textContent = `Loaded ${sitterModels.length} sitters. Click "Load More" for pagination via HTMX.`;
+                
+            } catch (error) {
+                console.error('Failed to load initial sitters:', error);
+                document.getElementById('stats').textContent = `Error: ${error.message}`;
+            }
+        }
+
+        function updateLoadMoreButton() {
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            const nextPage = currentPage + 1;
+            loadMoreBtn.setAttribute('hx-get', `/api/sitters?page=${nextPage}`);
+        }
+
+        // Legacy function for manual loading (keeping for compatibility)
+        async function loadMoreSitters() {
+            try {
+                currentPage++;
+                const response = await sdk.searchSitters({
+                    include: ['avatars', 'inaccurate_location'],
+                    page: currentPage,
+                    per_page: 5
+                });
+
+                const sitterModels = SitterModel.fromListResponse(response);
+                const container = document.getElementById('sitters-container');
+                
+                sitterModels.forEach(sitter => {
+                    const cardHtml = createSitterCard(sitter);
+                    container.insertAdjacentHTML('beforeend', cardHtml);
+                });
+                
+                // Set up lazy loading for new avatars
+                avatarManager.observeNewAvatars();
+                updateLoadMoreButton();
+                
+                if (response.meta && currentPage >= response.meta.total_pages) {
+                    document.getElementById('load-more-btn').disabled = true;
+                    document.getElementById('load-more-btn').textContent = 'No More Sitters';
+                }
+                
+            } catch (error) {
+                console.error('Failed to load more sitters:', error);
+            }
+        }
+
+        // HTMX-enhanced load more function
+        async function loadMoreSittersHtmx(button) {
+            try {
+                // Show HTMX loading indicator
+                const indicator = document.getElementById('loading-indicator');
+                indicator.style.display = 'block';
+                button.disabled = true;
+                button.textContent = 'Loading...';
+                
+                // Trigger HTMX request class for styling
+                document.body.classList.add('htmx-request');
+                
+                currentPage++;
+                const response = await sdk.searchSitters({
+                    include: ['avatars', 'inaccurate_location'],
+                    page: currentPage,
+                    per_page: 5
+                });
+
+                const sitterModels = SitterModel.fromListResponse(response);
+                const container = document.getElementById('sitters-container');
+                
+                // Create HTML content for HTMX-style insertion
+                let htmlContent = '';
+                sitterModels.forEach(sitter => {
+                    htmlContent += createSitterCard(sitter);
+                });
+                
+                // Use HTMX-style DOM manipulation
+                container.insertAdjacentHTML('beforeend', htmlContent);
+                
+                // Trigger HTMX afterSwap event for consistency
+                const afterSwapEvent = new CustomEvent('htmx:afterSwap', {
+                    detail: { target: container }
+                });
+                document.body.dispatchEvent(afterSwapEvent);
+                
+                // Update stats
+                document.getElementById('stats').textContent = 
+                    `Loaded ${document.querySelectorAll('.sitter-card').length} sitters total. HTMX enhanced pagination.`;
+                
+                if (response.meta && currentPage >= response.meta.total_pages) {
+                    button.disabled = true;
+                    button.textContent = 'No More Sitters Available';
+                } else {
+                    button.disabled = false;
+                    button.textContent = 'Load More Sitters (HTMX Enhanced)';
+                }
+                
+            } catch (error) {
+                console.error('Failed to load more sitters via HTMX:', error);
+                document.getElementById('stats').textContent = `HTMX Error: ${error.message}`;
+            } finally {
+                // Hide loading indicator
+                document.getElementById('loading-indicator').style.display = 'none';
+                document.body.classList.remove('htmx-request');
+            }
+        }
+
+        // Initialize the application
+        async function init() {
+            try {
+                avatarManager = new LazyAvatarManager();
+                await initializeSDK();
+                await loadInitialSitters();
+                
+                // Make functions globally available
+                window.loadMoreSitters = loadMoreSitters;
+                window.loadMoreSittersHtmx = loadMoreSittersHtmx;
+                window.avatarManager = avatarManager;
+                
+                // Set up HTMX event listeners
+                document.body.addEventListener('htmx:afterSwap', function(event) {
+                    // After HTMX loads new content, observe new avatars
+                    console.log('HTMX afterSwap event triggered');
+                    avatarManager.observeNewAvatars();
+                });
+                
+                // Set up additional HTMX events for better UX
+                document.body.addEventListener('htmx:beforeRequest', function(event) {
+                    console.log('HTMX request starting');
+                });
+                
+                document.body.addEventListener('htmx:responseError', function(event) {
+                    console.error('HTMX request failed:', event.detail);
+                    document.getElementById('stats').textContent = 'HTMX request failed. Please try again.';
+                });
+                
+            } catch (error) {
+                console.error('Failed to initialize application:', error);
+                document.getElementById('stats').textContent = `Failed to initialize: ${error.message}`;
+            }
+        }
+
+        // Start the application
+        init();
+    </script>
+</body>
+</html> 

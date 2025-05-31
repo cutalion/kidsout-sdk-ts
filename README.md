@@ -126,6 +126,19 @@ Returns a `Promise<ListResponse<Region>>`.
 
 Returns a `Promise<ListResponse<Currency>>`.
 
+## Examples
+
+The `examples/` directory contains various usage examples:
+
+- **`examples/lazy-avatar-browser.html`** - Interactive browser demo with lazy loading avatars, HTMX integration, and real API data
+- **`examples/example.js`** - Basic SDK usage with different lazy loading strategies
+- **`examples/example-with-models.js`** - Advanced usage with model classes and sophisticated avatar loading patterns
+
+To run the browser example:
+1. Build the SDK: `npm run build`
+2. Start a web server: `python3 -m http.server 8000`
+3. Open: `http://localhost:8000/examples/lazy-avatar-browser.html`
+
 ## Contributing
 
 Feel free to open issues or submit pull requests.

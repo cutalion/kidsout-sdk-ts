@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.api-notice {
+    background: #e8f5e8;
+    border: 1px solid #4caf50;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sitter-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    min-height: 80px;
+}
+
+.avatar-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-placeholder {
+    width: 30px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 12px;
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.avatar-image.loaded {
+    opacity: 1;
+}
+
+.avatar-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.sitter-info {
+    flex: 1;
+}
+
+.sitter-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sitter-details {
+    color: #666;
+    font-size: 14px;
+}
+
+.load-more {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.load-more button {
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.load-more button:hover {
+    background: #2980b9;
+}
+
+.load-more button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.stats {
+    background: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+
+.htmx-indicator {
+    color: #3498db;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.htmx-request .htmx-indicator {
+    display: block !important;
+}
+
+.htmx-request button {
+    opacity: 0.6;
+    cursor: wait;
+} 
